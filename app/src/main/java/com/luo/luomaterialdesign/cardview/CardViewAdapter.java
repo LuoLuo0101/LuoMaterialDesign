@@ -1,4 +1,4 @@
-package com.luo.luomaterialdesign;
+package com.luo.luomaterialdesign.cardview;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,18 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.luo.luomaterialdesign.Bean;
+import com.luo.luomaterialdesign.R;
+
 import java.util.List;
 
 /**
- * MyAdapter by Luo.
+ * CardViewAdapter by Luo.
  * <p>
  * Created by Luo on 2017/4/30 0030.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHolder> {
     private Context context;
     private List<Bean> list;
 
-    public MyAdapter(Context context, List<Bean> list) {
+    public CardViewAdapter(Context context, List<Bean> list) {
         this.context = context;
         this.list = list;
     }
@@ -39,7 +42,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         Bean bean = list.get(position);
         final Class clazz = bean.getClazz();
-        holder.title.setText(bean.getTitle());
+        holder.text.setText(bean.getTitle());
         if (clazz == null) {
             holder.itemView.setOnClickListener(null);
         } else {
@@ -58,11 +61,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView title;
+        private TextView text;
 
         ViewHolder(View itemView) {
             super(itemView);
-            title = ((TextView) itemView.findViewById(R.id.title));
+            text = ((TextView) itemView.findViewById(R.id.text));
         }
     }
 }
