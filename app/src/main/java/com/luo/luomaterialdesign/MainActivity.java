@@ -1,18 +1,17 @@
 package com.luo.luomaterialdesign;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
+import com.luo.luomaterialdesign.drawerlayout.DrawerLayoutActivity;
 import com.luo.luomaterialdesign.toolbar.ToolBarActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.Listener {
+public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private ArrayList<Bean> list;
     private MyAdapter adapter;
 
     @Override
@@ -21,29 +20,18 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.Listene
         setContentView(R.layout.activity_main);
         initView();
         initData();
-        setData();
     }
 
-    protected void initView() {
+    private void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
     }
 
     private void initData() {
-        list = new ArrayList<>();
-        list.add(new Bean("ToolBar", ToolBarActivity.class));
-    }
-
-    private void setData() {
-        adapter = new MyAdapter(this, list, this);
+        List<Bean> list = new ArrayList<>();
+        list.add(new Bean("ToolBar简单使用", ToolBarActivity.class));
+        list.add(new Bean("DrawerLayout的简单使用", DrawerLayoutActivity.class));
+        adapter = new MyAdapter(this, list);
         recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public void onClick(View v, int position) {
-        Bean bean = list.get(position);
-        Class clazz = bean.getClazz();
-        if (clazz != null) {
-            startActivity(new Intent(this, clazz));
-        }
-    }
 }

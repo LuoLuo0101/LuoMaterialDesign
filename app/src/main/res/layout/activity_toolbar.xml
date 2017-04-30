@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--给ToolBar单独设置主题-->
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--给ToolBar上弹出的Window设置主题-->
+    <!--app:popupTheme="@style/Theme.AppCompat.Light"-->
+    <!--设置背景颜色-->
+    <!--android:background="?attr/colorPrimary"-->
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/Theme.AppCompat.Light" />
 </LinearLayout>
