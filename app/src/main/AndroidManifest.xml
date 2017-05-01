@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".toolbar.ToolBarActivity" />
-        <activity android:name=".drawerlayout.DrawerLayoutActivity" />
+        <activity
+            android:name=".drawerlayout.DrawerLayoutActivity"
+            android:theme="@style/MyTheme" />
     </application>
 
 </manifest>
