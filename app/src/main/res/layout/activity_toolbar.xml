@@ -17,5 +17,14 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/Theme.AppCompat.Light" />
+        app:navigationIcon="@mipmap/ic_launcher_round"
+        app:navigationContentDescription="我的导航栏的描述"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:collapseIcon="@mipmap/ic_launcher"
+        app:collapseContentDescription="折叠内容的描述"
+        app:logo="@mipmap/ic_launcher_round"
+        app:logoDescription="我是logo的描述"
+        app:subtitleTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        app:subtitle="子标题"
+        app:subtitleTextColor="@color/colorAccent"/>
 </LinearLayout>
